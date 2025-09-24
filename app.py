@@ -15,7 +15,7 @@ contexto_inicial = (
 )
 meu_agente = AgenteIA(contexto=contexto_inicial)
 
-user_input = st.text_input("Você:", placeholder="Digite sua mensagem aqui...")
+user_input = st.text_area("Você:", placeholder="Digite sua mensagem aqui...")
 
 if st.button("enviar"):
     if user_input.lower() == "sair":
