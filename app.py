@@ -1,5 +1,7 @@
 import streamlit as st
 from src.agent import AgenteIA
+from src.storage import storage
+from src.ui import render_history
 
 st.set_page_config(page_title="Agente de IA", page_icon="🤖")
 
@@ -14,6 +16,8 @@ contexto_inicial = (
     "Sempre cite exemplos práticos para a aplicação do que está sendo ensinado."
 )
 meu_agente = AgenteIA(contexto=contexto_inicial)
+history = storage.load_history()
+render_history(history)
 
 user_input = st.text_area("Você:", placeholder="Digite sua mensagem aqui...")
 

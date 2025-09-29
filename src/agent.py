@@ -1,14 +1,12 @@
-import google.generativeai as genai
+import google.generativeai as genai  # type: ignore
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 
 class AgenteIA:
     """
     Classe que representa um agente de IA capaz de interagir com o usuário e realizar buscas na web.
     """
-    
-
     def __init__(self, contexto=None):
         """
         Inicializa o agente com a chave da API do Google Generative AI.
@@ -19,7 +17,7 @@ class AgenteIA:
         if not api_key:
             raise ValueError("A chave da API do Google Generative AI não foi encontrada nas variáveis de ambiente.")
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-1.5-flash-latest")    
+        model = genai.GenerativeModel("gemini-pro")    
 
         self.initial_history = []
         if contexto:
