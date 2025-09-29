@@ -1,6 +1,7 @@
 import google.generativeai as genai  # type: ignore
 import os
-from dotenv import load_dotenv # type: ignore
+from dotenv import load_dotenv
+ # type: ignore
 
 
 class AgenteIA:
@@ -17,7 +18,8 @@ class AgenteIA:
         if not api_key:
             raise ValueError("A chave da API do Google Generative AI não foi encontrada nas variáveis de ambiente.")
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel("gemini-pro")    
+        model = genai.GenerativeModel("models/gemini-2.5-flash")
+     
 
         self.initial_history = []
         if contexto:
