@@ -6,13 +6,13 @@ from .ui import render_history
 
 class Chat:
     @staticmethod
-    def conversation():
-        contexto_inicial = (
+    def conversation(conhecimento):
+        contexto_inicial = [(
             "Você é um agente especializado em desenvolvimento de sites, desenvolvimetos de agentes ias "
             "Responda de forma educada e clara, e sempre pergunte se o usuário precisa de mais ajuda."
             "Você deve responder as perguntas para um aluno de analise e desenvolvimento de sistemas, com um bom conhecimento na area, sempre dando sugestões"
             "Sempre cite exemplos práticos para a aplicação do que está sendo ensinado."
-        )
+        )]
 
         meu_agente = AgenteIA(contexto=contexto_inicial)
         history = Storage.load_history()

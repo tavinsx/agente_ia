@@ -14,12 +14,10 @@ class AgenteIA:
         """
         load_dotenv()
         api_key = os.getenv("GOOGLE_API_KEY")
-
         if not api_key:
             raise ValueError("A chave da API do Google Generative AI não foi encontrada nas variáveis de ambiente.")
         genai.configure(api_key=api_key)
         model = genai.GenerativeModel("models/gemini-2.5-flash")
-     
 
         self.initial_history = []
         if contexto:

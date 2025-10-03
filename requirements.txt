@@ -2,3 +2,5 @@ google-generativeai
 python-dotenv
 streamlit
 streamlit-js-eval
+sqlite3
+sentence-transformers
